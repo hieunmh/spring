@@ -38,16 +38,19 @@ export default function Intro() {
         <span className='font-bold'>UET-VNU</span>
       </motion.p>
 
-      <div className='flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium'>
+      <motion.div className='flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium'
+        initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+      >
         <Link href='#contact' className='group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 
           rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition'
         >
-          Contact me here <BsArrowRight /> {' '}
+          Contact me here <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition' /> {' '}
         </Link>
 
         <a className='bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 
         rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer 
-        borderBlack dark:bg-white/10 dark:text-white/60'
+        borderBlack'
           href="https://facebook.com/pt.minhieu"
           target="_blank"
         >
@@ -56,13 +59,13 @@ export default function Intro() {
 
         <a className='bg-white p-4 text-gray-950 flex items-center gap-2 text-[1.35rem] rounded-full 
           focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition 
-          cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60'
+          cursor-pointer borderBlack '
           href="https://github.com/hieunmh"
           target="_blank"
         >
           <BsGithub />
         </a>
-      </div>
+      </motion.div>
     </section>
   )
 }
