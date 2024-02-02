@@ -15,6 +15,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+	@SuppressWarnings("null")
 	@Bean
 	public CommandLineRunner commandLineRunner (ProductRepository repository) {
 		return args -> {
